@@ -47,6 +47,27 @@ npm install
 npm run dev
 ```
 
+## Testing
+
+For local testing, use MCPJam
+
+```bash
+npx @mcpjam/inspector@latest
+```
+
+### Add a new server
+Connection type: HTTP
+
+URL: http://localhost:3000 (check your mcp server url from the above step)
+
+No Authentication
+
+### Running a query
+
+Go the the App Builder tab
+
+Enter a query like `Show me hotels in Las Vegas 5/1 to 5/5`
+
 ## How It Works
 
 1. The server registers a `search-hotels` tool linked to a UI resource (`ui://search-hotels/mcp-app.html`).
