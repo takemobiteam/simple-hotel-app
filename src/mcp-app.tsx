@@ -1,38 +1,15 @@
 import type { McpUiHostContext } from "@modelcontextprotocol/ext-apps";
 import { useApp } from "@modelcontextprotocol/ext-apps/react";
-import type { CallToolResult } from "@modelcontextprotocol/sdk/types.js";
 import { useEffect, useState } from "react";
 import { createRoot } from "react-dom/client";
-import type { Hotel } from "../server.js";
+import { parseHotels } from "./lib.js";
+import type { Hotel } from "./types.js";
 import styles from "./mcp-app.module.css";
-
-
-function parseHotels(result: CallToolResult): Hotel[] {
-  try {
-    // structuredContent.text holds the raw JSON string of the hotels array
-    const structured = (result as Record<string, unknown>).structuredContent as { text?: string } | undefined;
-    if (structured?.text) {
-      const parsed = JSON.parse(structured.text);
-      if (Array.isArray(parsed)) return parsed;
-    }
-    // Fallback: content text may be a JSON-encoded envelope { text: "..." }
-    const textBlock = result.content?.find((c) => c.type === "text");
-    if (!textBlock || textBlock.type !== "text") return [];
-    const parsed = JSON.parse(textBlock.text);
-    if (Array.isArray(parsed)) return parsed;
-    if (typeof parsed?.text === "string") {
-      const inner = JSON.parse(parsed.text);
-      return Array.isArray(inner) ? inner : [];
-    }
-    return [];
-  } catch {
-    return [];
-  }
-}
 
 
 function HotelSearchApp() {
   const [hotels, setHotels] = useState<Hotel[]>([]);
+  const [loading, setLoading] = useState(true);
   const [hostContext, setHostContext] = useState<McpUiHostContext | undefined>();
 
   const { app, error } = useApp({
@@ -45,6 +22,7 @@ function HotelSearchApp() {
       app.ontoolresult = async (result) => {
         console.log("Received tool result:", result);
         setHotels(parseHotels(result));
+        setLoading(false);
       };
 
       app.onhostcontextchanged = (params) => {
@@ -70,7 +48,13 @@ function HotelSearchApp() {
         paddingLeft: hostContext?.safeAreaInsets?.left,
       }}
     >
-      {hotels.length === 0 ? (
+      {loading ? (
+        <ul className={styles.hotelList}>
+          <SkeletonCard />
+          <SkeletonCard />
+          <SkeletonCard />
+        </ul>
+      ) : hotels.length === 0 ? (
         <p className={styles.empty}>No hotels to display.</p>
       ) : (
         <>
@@ -89,27 +73,31 @@ function HotelSearchApp() {
 }
 
 
-function StarRating({ stars }: { stars: number }) {
+function SkeletonCard() {
   return (
-    <span className={styles.stars} aria-label={`${stars} stars`}>
-      {"★".repeat(Math.min(stars, 5))}{"☆".repeat(Math.max(0, 5 - stars))}
-    </span>
+    <li className={styles.hotelCard}>
+      <div className={`${styles.skeleton} ${styles.skeletonImage}`} />
+      <div className={styles.hotelInfo}>
+        <div className={styles.hotelHeader}>
+          <div className={`${styles.skeleton} ${styles.skeletonName}`} />
+          <div className={`${styles.skeleton} ${styles.skeletonRate}`} />
+        </div>
+        <div className={`${styles.skeleton} ${styles.skeletonAddress}`} />
+      </div>
+    </li>
   );
 }
 
+
 function HotelCard({ hotel }: { hotel: Hotel }) {
-  const location = [hotel.city, hotel.stateCode, hotel.countryCode].filter(Boolean).join(", ");
   return (
     <li className={styles.hotelCard}>
-      {hotel.heroImageUrl && (
-        <img className={styles.hotelImage} src={hotel.heroImageUrl} alt={hotel.name} />
+      {hotel.imageUrls[0] && (
+        <img className={styles.hotelImage} src={hotel.imageUrls[0]} alt={hotel.name} />
       )}
       <div className={styles.hotelInfo}>
         <div className={styles.hotelHeader}>
-          <div>
-            <h3 className={styles.hotelName}>{hotel.name}</h3>
-            <p className={styles.hotelBrand}>{hotel.brand}</p>
-          </div>
+          <h3 className={styles.hotelName}>{hotel.name}</h3>
           {hotel.lowestRate != null && (
             <div className={styles.hotelRate}>
               <span className={styles.rateAmount}>
@@ -120,16 +108,6 @@ function HotelCard({ hotel }: { hotel: Hotel }) {
           )}
         </div>
         <p className={styles.hotelAddress}>{hotel.address}</p>
-        <p className={styles.hotelLocation}>{location}</p>
-        <div className={styles.hotelMeta}>
-          <StarRating stars={hotel.starRating} />
-          {hotel.guestRating != null && (
-            <span className={styles.guestRating}>
-              {hotel.guestRating.toFixed(1)} guest rating
-              {hotel.reviewCount > 0 && ` (${hotel.reviewCount.toLocaleString()} reviews)`}
-            </span>
-          )}
-        </div>
       </div>
     </li>
   );

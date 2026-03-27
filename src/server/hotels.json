@@ -1,0 +1,212 @@
+[
+  {
+    "propertyId": "01001",
+    "name": "La Quinta Inn & Suites Downtown",
+    "brand": "La Quinta",
+    "address": "123 Main St",
+    "city": "Las Vegas",
+    "stateCode": "NV",
+    "countryCode": "US",
+    "latitude": 36.1699,
+    "longitude": -115.1398,
+    "starRating": 3,
+    "guestRating": 8.4,
+    "reviewCount": 1243,
+    "lowestRate": 89,
+    "currency": "USD",
+    "imageUrls": [
+      "https://picsum.photos/seed/hotel-lq-1/560/300",
+      "https://picsum.photos/seed/hotel-lq-2/560/300",
+      "https://picsum.photos/seed/hotel-lq-3/560/300"
+    ]
+  },
+  {
+    "propertyId": "01002",
+    "name": "Wyndham Grand Resort & Spa",
+    "brand": "Wyndham Grand",
+    "address": "456 Paradise Rd",
+    "city": "Las Vegas",
+    "stateCode": "NV",
+    "countryCode": "US",
+    "latitude": 36.175,
+    "longitude": -115.15,
+    "starRating": 4,
+    "guestRating": 9.1,
+    "reviewCount": 3872,
+    "lowestRate": 179,
+    "currency": "USD",
+    "imageUrls": [
+      "https://picsum.photos/seed/hotel-wg-1/560/300",
+      "https://picsum.photos/seed/hotel-wg-2/560/300",
+      "https://picsum.photos/seed/hotel-wg-3/560/300"
+    ]
+  },
+  {
+    "propertyId": "01003",
+    "name": "Days Inn by Wyndham Strip",
+    "brand": "Days Inn",
+    "address": "789 Las Vegas Blvd",
+    "city": "Las Vegas",
+    "stateCode": "NV",
+    "countryCode": "US",
+    "latitude": 36.162,
+    "longitude": -115.144,
+    "starRating": 2,
+    "guestRating": 7.2,
+    "reviewCount": 589,
+    "lowestRate": 59,
+    "currency": "USD",
+    "imageUrls": [
+      "https://picsum.photos/seed/hotel-di-1/560/300",
+      "https://picsum.photos/seed/hotel-di-2/560/300",
+      "https://picsum.photos/seed/hotel-di-3/560/300"
+    ]
+  },
+  {
+    "propertyId": "01004",
+    "name": "Ramada by Wyndham Convention Center",
+    "brand": "Ramada",
+    "address": "321 Convention Center Dr",
+    "city": "Las Vegas",
+    "stateCode": "NV",
+    "countryCode": "US",
+    "latitude": 36.18,
+    "longitude": -115.16,
+    "starRating": 3,
+    "guestRating": 7.8,
+    "reviewCount": 1104,
+    "lowestRate": 74,
+    "currency": "USD",
+    "imageUrls": [
+      "https://picsum.photos/seed/hotel-rm-1/560/300",
+      "https://picsum.photos/seed/hotel-rm-2/560/300",
+      "https://picsum.photos/seed/hotel-rm-3/560/300"
+    ]
+  },
+  {
+    "propertyId": "01005",
+    "name": "Super 8 by Wyndham Airport",
+    "brand": "Super 8",
+    "address": "600 Airport Connector Rd",
+    "city": "Las Vegas",
+    "stateCode": "NV",
+    "countryCode": "US",
+    "latitude": 36.084,
+    "longitude": -115.1537,
+    "starRating": 2,
+    "guestRating": 6.9,
+    "reviewCount": 412,
+    "lowestRate": 49,
+    "currency": "USD",
+    "imageUrls": [
+      "https://picsum.photos/seed/hotel-s8-1/560/300",
+      "https://picsum.photos/seed/hotel-s8-2/560/300",
+      "https://picsum.photos/seed/hotel-s8-3/560/300"
+    ]
+  },
+  {
+    "propertyId": "01006",
+    "name": "Wyndham Las Vegas at Tropicana",
+    "brand": "Wyndham",
+    "address": "3801 Las Vegas Blvd S",
+    "city": "Las Vegas",
+    "stateCode": "NV",
+    "countryCode": "US",
+    "latitude": 36.1012,
+    "longitude": -115.1724,
+    "starRating": 4,
+    "guestRating": 8.7,
+    "reviewCount": 2156,
+    "lowestRate": 149,
+    "currency": "USD",
+    "imageUrls": [
+      "https://picsum.photos/seed/hotel-wt-1/560/300",
+      "https://picsum.photos/seed/hotel-wt-2/560/300",
+      "https://picsum.photos/seed/hotel-wt-3/560/300"
+    ]
+  },
+  {
+    "propertyId": "01007",
+    "name": "Baymont Inn & Suites Fremont",
+    "brand": "Baymont",
+    "address": "200 Fremont St",
+    "city": "Las Vegas",
+    "stateCode": "NV",
+    "countryCode": "US",
+    "latitude": 36.1705,
+    "longitude": -115.1439,
+    "starRating": 2,
+    "guestRating": 7.5,
+    "reviewCount": 834,
+    "lowestRate": 65,
+    "currency": "USD",
+    "imageUrls": [
+      "https://picsum.photos/seed/hotel-bi-1/560/300",
+      "https://picsum.photos/seed/hotel-bi-2/560/300",
+      "https://picsum.photos/seed/hotel-bi-3/560/300"
+    ]
+  },
+  {
+    "propertyId": "01008",
+    "name": "Howard Johnson by Wyndham Near Strip",
+    "brand": "Howard Johnson",
+    "address": "1401 S Las Vegas Blvd",
+    "city": "Las Vegas",
+    "stateCode": "NV",
+    "countryCode": "US",
+    "latitude": 36.158,
+    "longitude": -115.1568,
+    "starRating": 2,
+    "guestRating": 7.0,
+    "reviewCount": 621,
+    "lowestRate": 55,
+    "currency": "USD",
+    "imageUrls": [
+      "https://picsum.photos/seed/hotel-hj-1/560/300",
+      "https://picsum.photos/seed/hotel-hj-2/560/300",
+      "https://picsum.photos/seed/hotel-hj-3/560/300"
+    ]
+  },
+  {
+    "propertyId": "01009",
+    "name": "Travelodge by Wyndham Tropicana",
+    "brand": "Travelodge",
+    "address": "3735 Las Vegas Blvd S",
+    "city": "Las Vegas",
+    "stateCode": "NV",
+    "countryCode": "US",
+    "latitude": 36.1025,
+    "longitude": -115.171,
+    "starRating": 2,
+    "guestRating": 6.8,
+    "reviewCount": 374,
+    "lowestRate": 48,
+    "currency": "USD",
+    "imageUrls": [
+      "https://picsum.photos/seed/hotel-tl-1/560/300",
+      "https://picsum.photos/seed/hotel-tl-2/560/300",
+      "https://picsum.photos/seed/hotel-tl-3/560/300"
+    ]
+  },
+  {
+    "propertyId": "01010",
+    "name": "La Quinta Inn & Suites Nellis",
+    "brand": "La Quinta",
+    "address": "4288 Boulder Hwy",
+    "city": "Las Vegas",
+    "stateCode": "NV",
+    "countryCode": "US",
+    "latitude": 36.1392,
+    "longitude": -115.0831,
+    "starRating": 3,
+    "guestRating": 8.1,
+    "reviewCount": 987,
+    "lowestRate": 79,
+    "currency": "USD",
+    "imageUrls": [
+      "https://picsum.photos/seed/hotel-ln-1/560/300",
+      "https://picsum.photos/seed/hotel-ln-2/560/300",
+      "https://picsum.photos/seed/hotel-ln-3/560/300"
+    ]
+  }
+]

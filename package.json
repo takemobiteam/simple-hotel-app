@@ -24,10 +24,10 @@
     }
   },
   "scripts": {
-    "build": "tsc --noEmit && cross-env INPUT=mcp-app.html vite build && tsc -p tsconfig.server.json && bun build server.ts --outdir dist --target node && bun build main.ts --outfile dist/index.js --target node --external \"./server.js\" --banner \"#!/usr/bin/env node\"",
+    "build": "tsc --noEmit && cross-env INPUT=mcp-app.html vite build && tsc -p tsconfig.server.json && esbuild src/server/server.ts --bundle --platform=node --packages=external --outdir=dist && esbuild src/server/main.ts --bundle --platform=node --outfile=dist/index.js --external:./server.js --banner:js=\"#!/usr/bin/env node\"",
     "watch": "cross-env INPUT=mcp-app.html vite build --watch",
-    "serve": "bun --watch main.ts",
-    "serve:stdio": "bun main.ts --stdio",
+    "serve": "tsx --watch src/server/main.ts",
+    "serve:stdio": "tsx src/server/main.ts --stdio",
     "start": "cross-env NODE_ENV=development npm run build && npm run serve",
     "start:stdio": "cross-env NODE_ENV=development npm run build 1>&2 && npm run serve:stdio",
     "dev": "cross-env NODE_ENV=development concurrently \"npm run watch\" \"npm run serve\"",
@@ -51,6 +51,8 @@
     "@vitejs/plugin-react": "^4.3.4",
     "concurrently": "^9.2.1",
     "cross-env": "^10.1.0",
+    "esbuild": "^0.25.12",
+    "tsx": "^4.21.0",
     "typescript": "^5.9.3",
     "vite": "^6.0.0",
     "vite-plugin-singlefile": "^2.3.0"
