@@ -1,12 +1,12 @@
 {
-  "name": "@modelcontextprotocol/server-basic-react",
+  "name": "@mobi/simple-hotel-app",
   "version": "1.3.1",
   "type": "module",
   "description": "Basic MCP App Server example using React",
   "repository": {
     "type": "git",
-    "url": "https://github.com/modelcontextprotocol/ext-apps",
-    "directory": "examples/basic-server-react"
+    "url": "https://github.com/takemobiteam/simple-hotel-app",
+    "directory": "src"
   },
   "license": "MIT",
   "main": "dist/server.js",
@@ -30,8 +30,8 @@
     "serve:stdio": "tsx src/server/main.ts --stdio",
     "start": "cross-env NODE_ENV=development npm run build && npm run serve",
     "start:stdio": "cross-env NODE_ENV=development npm run build 1>&2 && npm run serve:stdio",
-    "dev": "cross-env NODE_ENV=development concurrently \"npm run watch\" \"npm run serve\"",
-    "prepublishOnly": "npm run build"
+    "dev": "cross-env NODE_ENV=development concurrently \"npm run watch\" \"PORT=3040 npm run serve \"",
+    "inspect": "cross-env NODE_ENV=development concurrently \"npm run watch\" \"PORT=3040 npm run serve \" \"npx @mcpjam/inspector\""
   },
   "dependencies": {
     "@modelcontextprotocol/ext-apps": "^1.0.0",
@@ -43,6 +43,7 @@
     "zod": "^4.1.13"
   },
   "devDependencies": {
+    "@mcpjam/inspector": "^2.4.15",
     "@types/cors": "^2.8.19",
     "@types/express": "^5.0.0",
     "@types/node": "22.10.0",

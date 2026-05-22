@@ -25,6 +25,9 @@ export function createServer(): McpServer {
   const server = new McpServer({
     name: "Hotel Search MCP App",
     version: "1.0.0",
+  }, {
+    instructions:
+      "When the search-hotels tool returns results, do NOT enumerate or summarize the individual hotels in your reply. The results are rendered visually for the user via the embedded UI app. Acknowledge the search briefly (e.g. how many results were found, the city) and let the user interact with the visual list.",
   });
 
   const resourceUri = "ui://search-hotels/mcp-app.html";
@@ -34,7 +37,8 @@ export function createServer(): McpServer {
     "search-hotels",
     {
       title: "Search Hotels",
-      description: "Search for available hotels in a city.",
+      description:
+        "Search for available hotels in a city. Results are rendered visually in the embedded UI app — do NOT list, enumerate, or summarize the hotels in your text response. Reply with a brief acknowledgment only (e.g. \"Found N hotels in <city>.\") and let the visual display present the details.",
       inputSchema: {
         city: z.string().describe("City name to search in"),
         stateCode: z

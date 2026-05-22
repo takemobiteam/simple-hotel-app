@@ -91,7 +91,7 @@ function SkeletonCard() {
 
 function HotelCard({ hotel }: { hotel: Hotel }) {
   return (
-    <li className={styles.hotelCard}>
+    <li className={styles.hotelCard} onClick={() => console.log("Hotel clicked:", hotel)}>
       {hotel.imageUrls[0] && (
         <img className={styles.hotelImage} src={hotel.imageUrls[0]} alt={hotel.name} />
       )}

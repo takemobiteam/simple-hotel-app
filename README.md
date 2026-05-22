@@ -2,24 +2,6 @@
 
 An MCP App that searches for hotels and displays results in an interactive React UI.
 
-## MCP Client Configuration
-
-Add to your MCP client configuration (stdio transport):
-
-```json
-{
-  "mcpServers": {
-    "hotel-search": {
-      "command": "bash",
-      "args": [
-        "-c",
-        "cd ~/code/mcp-onsite && npm run build >&2 && node dist/index.js --stdio"
-      ]
-    }
-  }
-}
-```
-
 ## Overview
 
 The LLM calls the `search-hotels` tool with a city and optional parameters. The host renders the React UI, which listens for the tool result via `ontoolresult` and displays the hotels as a list of cards.
@@ -44,7 +26,6 @@ The LLM calls the `search-hotels` tool with a city and optional parameters. The 
 
 ```bash
 npm install
-npm run dev
 ```
 
 ## Testing
@@ -52,21 +33,25 @@ npm run dev
 For local testing, use MCPJam
 
 ```bash
-npx @mcpjam/inspector@latest
+npm run inspect
 ```
 
 ### Add a new server
+Click the Connect nav option > Add Server
+
 Connection type: HTTP
 
-URL: http://localhost:3000 (check your mcp server url from the above step)
+URL: http://localhost:3040 (check your mcp server url from the above step)
 
 No Authentication
 
 ### Running a query
 
-Go the the App Builder tab
+Go the the Playground 
 
-Enter a query like `Show me hotels in Las Vegas 5/1 to 5/5`
+Enter a query like `Show me hotels in Las Vegas 8/1 to 8/5 2026`
+
+You can also click on the 'search-hotels` tool on the left and enter las vegas as the city
 
 ## How It Works
 
