@@ -31,7 +31,7 @@
     "start": "cross-env NODE_ENV=development npm run build && npm run serve",
     "start:stdio": "cross-env NODE_ENV=development npm run build 1>&2 && npm run serve:stdio",
     "dev": "cross-env NODE_ENV=development concurrently \"npm run watch\" \"PORT=3040 npm run serve \"",
-    "inspect": "cross-env NODE_ENV=development concurrently \"npm run watch\" \"PORT=3040 npm run serve \" \"npx @mcpjam/inspector\""
+    "inspect": "cross-env NODE_ENV=development concurrently \"npm run watch\" \"PORT=3040 npm run serve \" \"npx @mcpjam/inspector@latest\""
   },
   "dependencies": {
     "@modelcontextprotocol/ext-apps": "^1.0.0",
@@ -43,7 +43,6 @@
     "zod": "^4.1.13"
   },
   "devDependencies": {
-    "@mcpjam/inspector": "^2.4.15",
     "@types/cors": "^2.8.19",
     "@types/express": "^5.0.0",
     "@types/node": "22.10.0",
