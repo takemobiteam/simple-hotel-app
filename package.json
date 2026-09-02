@@ -30,8 +30,8 @@
     "serve:stdio": "tsx src/server/main.ts --stdio",
     "start": "cross-env NODE_ENV=development npm run build && npm run serve",
     "start:stdio": "cross-env NODE_ENV=development npm run build 1>&2 && npm run serve:stdio",
-    "dev": "cross-env NODE_ENV=development concurrently \"npm run watch\" \"PORT=3040 npm run serve \"",
-    "inspect": "cross-env NODE_ENV=development concurrently \"npm run watch\" \"PORT=3040 npm run serve \" \"npx @mcpjam/inspector@latest\""
+    "dev": "cross-env NODE_ENV=development concurrently \"npm run watch\" \"cross-env PORT=3040 npm run serve\"",
+    "inspect": "cross-env NODE_ENV=development concurrently \"npm run watch\" \"cross-env PORT=3040 npm run serve\" \"npx @mcpjam/inspector@latest\""
   },
   "dependencies": {
     "@modelcontextprotocol/ext-apps": "^1.0.0",

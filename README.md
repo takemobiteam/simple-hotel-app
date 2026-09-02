@@ -49,7 +49,7 @@ No Authentication
 
 Go the the Playground 
 
-Enter a query like `Show me hotels in Las Vegas 8/1 to 8/5 2026`
+Enter a query like `Show me hotels in Las Vegas 12/1 to 12/5 2026`
 
 You can also click on the 'search-hotels` tool on the left and enter las vegas as the city
 
